@@ -1,0 +1,16 @@
+.opening {
+  cursor: pointer;
+}
+
+.selectable:hover .gap {
+  filter: brightness(0.98);
+}
+
+.gap {
+  pointer-events: all;
+}
+
+.dimensions text {
+  font-family: var(--font-sans);
+  letter-spacing: 0.01em;
+}

@@ -1,0 +1,94 @@
+.app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+
+.mobileNav {
+  display: none;
+}
+
+.backdrop {
+  display: none;
+}
+
+.mobileItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-width: 54px;
+  padding: 4px 7px;
+  border-radius: var(--radius-xs);
+  color: var(--text-2);
+  font-size: 9px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.mobileActive {
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .mobileNav {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    height: 42px;
+    padding: 3px 8px;
+    overflow-x: auto;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+    z-index: 10;
+  }
+
+  .backdrop {
+    display: block;
+    position: absolute;
+    inset: 0;
+    border: none;
+    padding: 0;
+    background: rgba(33, 45, 39, 0.28);
+    backdrop-filter: blur(1px);
+    z-index: 40;
+    animation: fadeIn 160ms var(--ease);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}

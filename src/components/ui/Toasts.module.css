@@ -1,0 +1,81 @@
+.stack {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: min(360px, calc(100vw - 36px));
+}
+
+/* Keep notifications clear of the fixed analysis bar and the Quick Fit apply bar. */
+.aboveBar {
+  bottom: calc(var(--analysis-h) + 12px);
+}
+
+.aboveApply {
+  bottom: 108px;
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 11px;
+  border-radius: var(--radius-md);
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  font-size: 12px;
+  line-height: 1.45;
+  animation: slideIn 200ms var(--ease);
+}
+
+.toast svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.info svg {
+  color: var(--primary);
+}
+
+.success {
+  border-color: #cfe2d7;
+}
+
+.success svg {
+  color: var(--success);
+}
+
+.error {
+  border-color: #f0cbc7;
+  background: #fffbfa;
+}
+
+.error svg {
+  color: var(--error);
+}
+
+.close {
+  margin-left: auto;
+  color: var(--text-3);
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.close:hover {
+  background: var(--surface-2);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
